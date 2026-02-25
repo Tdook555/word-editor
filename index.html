@@ -421,7 +421,7 @@
             formData.append('pairs', JSON.stringify(pairs));
 
             try {
-                const res = await fetch('http://localhost:8000/preview', { method: 'POST', body: formData });
+                const res = await fetch('https://word-editor-cjn8.onrender.com/preview', { method: 'POST', body: formData });
                 const data = await res.json();
                 showPreview(data);
                 setStatus('', '');
@@ -463,7 +463,7 @@
             formData.append('pairs', JSON.stringify(pairs));
 
             try {
-                const res = await fetch('http://localhost:8000/edit', { method: 'POST', body: formData });
+                const res = await fetch('https://word-editor-cjn8.onrender.com/edit', { method: 'POST', body: formData });
                 if (res.ok) {
                     const blob = await res.blob();
                     const url = URL.createObjectURL(blob);
@@ -484,4 +484,5 @@
         }
     </script>
 </body>
+
 </html>
